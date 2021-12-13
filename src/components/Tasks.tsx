@@ -17,7 +17,7 @@ export const Tasks = memo((props: TasksProps) => {
 		"observable": newTask$.pipe(
 			concatMap(description => from(newTask(description)))
 		),
-		"setter": forceUpdate
+		"setter": () => forceUpdate()
 	})
 
 	const {classes} = useStyles();
